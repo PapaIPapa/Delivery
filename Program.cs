@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace DeliveryService
+namespace Delivery
 {
     public class Order
     {
@@ -33,8 +33,16 @@ namespace DeliveryService
     public class DeliveryService
     {
         private readonly List<Order> _orders = new List<Order>();
+        public List<Order> orders 
+        {
+            get
+            {
+                return this._orders;
+            }
+        }
         private readonly Logger _logger;
 
+        
         public DeliveryService(string logFilePath)
         {
             _logger = new Logger(logFilePath);
